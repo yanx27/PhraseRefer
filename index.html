@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>PhraseRefer</title>
+    <title>PhraseRefer</title>    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- <link href="https://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/ghotish.css" rel="stylesheet">
     <meta content="Toward Explainable and Fine-Grained 3D Grounding through Referring Textual Phrases" name="description">
     <meta content="Toward Explainable and Fine-Grained 3D Grounding through Referring Textual Phrases" property="og:title">
     <meta content="Toward Explainable and Fine-Grained 3D Grounding through Referring Textual Phrases." property="og:description">
@@ -16,102 +20,96 @@
     <meta property="og:type" content="website">
     <meta content="summary_large_image" name="twitter:card">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="./css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="./css/ghotish.css" rel="stylesheet">
+
 </head>
 
-<body class="container-sm">
-    <div>
-        <h2 class="text-center d-block text-dark pt-5">
-            Toward Explainable and Fine-Grained 3D Grounding through Referring Textual Phrases
-        </h2>
-<!--        <h4 class="text-center d-block" style="color:#ffc107">CVPR 2022 (Oral)-->
-        </h4>
-        <p class="text-center d-block text-dark"><a class="text-secondary" href="https://github.com/CurryYuan">Zhihao Yuan*,</a> <a class="text-secondary" href="https://yanx27.github.io/">Xu Yan*,</a> Zhuo Li*, Xuhao Li
-            Yao Guo, Shuguang Cui, <a class="text-secondary" href="https://mypage.cuhk.edu.cn/academics/lizhen/"> Zhen Li</a></p>
-        <p class="text-center d-block text-dark">The Chinese University of Hong Kong, Shenzhen </p>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center d-block text-dark pt-5">Toward Explainable and Fine-Grained 3D Grounding <br>through Referring Textual Phrases</h1>
+                <p class="text-center d-block text-dark"><a class="text-secondary" href="https://github.com/CurryYuan">Zhihao Yuan*,</a> 
+                    <a class="text-secondary" href="https://yanx27.github.io/">Xu Yan*,</a> Zhuo Li*, Xuhao Li
+                    Yao Guo, Shuguang Cui, <a class="text-secondary" href="https://mypage.cuhk.edu.cn/academics/lizhen/"> Zhen Li</a></p>
+                <p class="text-center d-block text-dark">The Chinese University of Hong Kong, Shenzhen </p>
+            </div>
 
-        <div>
-            <div class="row gx-5 justify-content-center row-cols-2">
+            <div class="row gx-5 justify-content-center row-cols-3">
                 <div class="col-1 p-3 text-decoration-none mx-5">
-                    <button type="button" class="btn"><a class="d-block mx-auto" href=""><img src="./figs/paper_icon.png" width="100%"/>
-                    </a>Paper</button>
-
+                    <button type="button" class="btn"><a class="d-block mx-auto" href="https://arxiv.org/abs/2207.01821"><img src="./figs/book.svg" width="100%"/>
+                    </a>
+                    <p style="padding-top: 10px;">Paper</p></button>
                 </div>
                 <div class="col-1 p-3 text-decoration-none mx-5">
-                    <button type="button" class="btn"><a class="d-block mx-auto" href=""><img src="./figs/code_icon.png" width="100%"/>
-                    </a>Code (comming soon)</button>
+                    <button type="button" class="btn">
+                        <a class="d-block mx-auto" href="" title="Coming soon"><img src="./figs/code.svg" width="100%"/>
+                    </a>
+                    <p style="padding-top: 17px;"><a title="Coming soon">Code</a></p></button>
+                </div>
+                <div class="col-1 p-3 text-decoration-none mx-5">
+                    <button type="button" class="btn">
+                        <a class="d-block mx-auto" href="" title="Coming soon"><img src="./figs/box.svg" width="100%"/>
+                    </a>
+                    <p style="padding-top: 5px;"><a title="Coming soon">Dataset</a></p></button>
+                </div>
+            </div>
+
+            <div class="row gx-5 justify-content-center row-cols-1">
+                <h3 style="text-align: center;"><div class="intro" >Abstract</div></h3>
+                <div class="col-9 p-3 text-decoration-none mx-5">
+                    <p style="text-align: center;">Recent progress on 3D scene understanding has explored visual grounding (3DVG) to localize a target object through a language description. However, existing methods only consider the dependency between the entire sentence and the target object, thus ignoring fine-grained relationships between contexts and non-target ones. In this paper, we extend 3DVG to a more reliable and explainable task, called <b style="color: black;">3D Phrase Aware Grounding (3DPAG)</b>. The 3DPAG task aims to localize the target object in the 3D scenes by explicitly identifying all phrase-related objects and then conducting reasoning according to contextual phrases. To tackle this problem, we label about 400K phrase-level annotations from 170K sentences in available 3DVG datasets, i.e., Nr3D, Sr3D and ScanRefer. By tapping on these developed datasets, we propose <b style="color: black;">a novel framework, i.e., PhraseRefer</b>, which conducts phrase-aware and object-level representation learning through phrase-object alignment optimization as well as phrase-specific pre-training. In our setting, we extend previous 3DVG methods to the phrase-aware scenario and provide metrics to measure <b style="color: black;">the explainability of the 3DPAG task</b>. Extensive results confirm that 3DPAG effectively boosts the 3DVG, and PhraseRefer achieves <b style="color: black;">state-of-the-arts</b> across three datasets, i.e., 63.0%, 54.4% and 55.5% overall accuracy on Sr3D, Nr3D and ScanRefer, respectively.</p>
+                </div>
+            </div>
+            
+            <div class="row gx-5 justify-content-center row-cols-1" style="padding-top: 50px;">
+                <h3 style="text-align: center;"><div class="intro" >Overview</div></h3>
+                <div class="col-7 p-3 text-decoration-none mx-5">
+                    <a class="d-block mx-auto"><img src="./figs/figure1.png" width="100%"/>
+                        </a>
+                        <p style="text-align: center;">Compared with previous 3DVG (a) only grounding the sole target object, 3DPAG (b) requires <b style="color: black;">the neural listener to identify all phrase-aware objects (target and non-target) in the 3D scene </b>and then <b style="color: black;"></b>explicitly conduct reasoning </b>over all objects through the contexts. Note that the 3D bounding boxes are annotated using the same color with the corresponding object phrases in the sentence. Best viewed in colored.
+                        </p>
+                </div>
+            </div>
+            
+            <div class="row gx-5 justify-content-center row-cols-1" style="padding-top: 50px;">
+                <h3 style="text-align: center;"><div class="intro">Framework</div></h3>
+                <div class="col-7 p-3 text-decoration-none mx-5">
+                    <a class="d-block mx-auto"><img src="./figs/figure2.png" width="100%"/>
+                        </a>
+                        <p style="text-align: center;"><b style="color: black;">Cross-modal Transformer with Phrase-Object Alignment (POA) Optimization.</b> Part (a) illustrates our baseline model, i.e., cross-modal transformer, and part (b) shows the process of optimizing the phrase-object alignment map.</p>
+                </div>
+                <div class="col-7 p-3 text-decoration-none mx-5">
+                    <a class="d-block mx-auto"><img src="./figs/figure3.png" width="100%"/>
+                        </a>
+                        <p style="text-align: center;"><b style="color: black;">Phrase-Specific Pre-training.</b> In the phrase-specific pre-training stage, we generate the phrase-specific masks according to the grounding truth phrases, e.g., setting the position of “the office chair” to 1 and other positions to 0. Then, we design the network to predict the corresponding object of the selected phrase. During the fine-tuning stage, we only predict the target object referred by the whole sentence.</p>
+                </div>
+            </div>
+
+            <div class="row gx-5 justify-content-center row-cols-1" style="padding-top: 50px;">
+                <h3 style="text-align: center;"><div class="intro" >Visualization Results</div></h3>
+                <div class="col-7 p-3 text-decoration-none mx-5">
+                    <a class="d-block mx-auto"><img src="./figs/figure4.png" width="100%"/>
+                        </a>
+                        <p style="text-align: center;"><b style="color: black;">Visualization Results of 3DVG.</b> We visualize the visual grounding results of
+                            SAT and ours. The left four examples are our correct predictions while SAT is not. The
+                            right two examples show the representative failures for both current SOTA model SAT
+                            and our PhraseRefer. The green/red/blue colors illustrate the correct/incorrect/GT
+                            boxes. The target class for each query is shown in red color. We provide rendered
+                            scenes in the first row for better visualization. Best viewed in color.
+                        </p>
+                </div>
+                <div class="col-7 p-3 text-decoration-none mx-5">
+                    <a class="d-block mx-auto"><img src="./figs/figure5.png" width="100%"/>
+                        </a>
+                        <p style="text-align: center;"><b style="color: black;">Visualization Results of 3DPAG.</b> We show examples of 3DPAG prediction
+                            and POA map of our method.The corresponding phrase and bounding box are drawn
+                            in the same color. Best viewed in color.
+                        </p>
                 </div>
             </div>
         </div>
-    </div>
+    <div>
 
-
-
-
-
-<!--    <div class="bg-light container-sm p-4 w-75">-->
-<!--        <h3 class="subtitle">Motivation & Method</h3>-->
-<!--        <p>-->
-<!--            For single object tracking in LiDAR scenes (LiDAR SOT), previous methods rely on appearance matching to localize the target using a target template.-->
-<!--        </p>-->
-<!--        <img src="./figs/matching_paradigm.png" class="img_fluid d-block mx-auto w-100" alt="Siamese matching paradigm" />-->
-<!--        <p>-->
-<!--            However, as shown in the following figure, matching-based approaches become unreliable when dealing with drastic appearance changes and distractors, which commonly exist in LiDAR scenes.-->
-<!--        </p>-->
-<!--        <img src="./figs/demo0.png" class="img_fluid d-block mx-auto w-100" alt="Distracted cases" />-->
-<!--        <p>-->
-<!--            Since the task deals with a dynamic scene across a video sequence, the target's movements among successive frames provide useful cues to distinguish distractors and handle appearance changes. We for the first time present a <b>motion-centric paradigm</b>            to handle LiDAR SOT. By explicitly learning from various "relative target motions" in data, the paradigm robustly localize the target in the current frame via motion transformation.-->
-<!--        </p>-->
-<!--        <img src="./figs/motion_centric_paradigm.png" class="img_fluid d-block mx-auto w-100" alt="Motion-Centric paradigm" />-->
-<!--        <p>-->
-<!--            Based on the motion-centric paradigm, a two-stage tracker M^2-Track is proposed. At 1 st-stage, M^2-Track localizes the target within successive frames via motion transformation. Then it refines the target box through motion-assisted shape completion-->
-<!--            at 2nd-stage. M^2-Track significantly outperforms the previous SOTAs and further shows its potential when simply integrated with appearance-matching.-->
-<!--        </p>-->
-<!--        <img src="./figs/arch.png" class="img_fluid d-block mx-auto w-100" alt="M^2-Track Architecture" />-->
-<!--    </div>-->
-
-<!--    <div class="container-sm p-4 w-75">-->
-<!--        <h3 class="subtitle">Distractor Statistics</h3>-->
-<!--        <p> Distributions of distractors for car/vehicle objects on different datasets:-->
-<!--        </p>-->
-<!--        <div class="row mx-auto">-->
-<!--            <img src="./figs/distractor_statistics.png" class=" d-block mx-auto" alt="distractor statistics" />-->
-<!--        </div>-->
-<!--        <p>Visualization:</p>-->
-<!--        <div class="row mx-auto">-->
-<!--            <img src="./figs/distractors_vis.png" class=" d-block mx-auto" alt="distractor statistics" />-->
-<!--        </div>-->
-<!--        <p>NuScenes and Waymo are more challenging for matching-based approaches due to widespread distractors in scenes. But M^2-Track robustly handles distractors via explicit motion modeling.</p>-->
-
-<!--    </div>-->
-
-<!--    <div class="container-sm p-4 w-75">-->
-<!--        <h3 class="subtitle">Quantitative Results</h3>-->
-<!--        <h6 class="text-black p-1">NuScenes & Waymo</h6>-->
-<!--        <div class="row mx-auto">-->
-<!--            <img src="./figs/results_nusc_waymo.png" class=" d-block mx-auto" alt="results on nuscenes and waymo" />-->
-<!--        </div>-->
-<!--        <h6 class="text-black p-3">Comparison & Behavior Analysis in KITTI </h6>-->
-<!--        <div class="row mx-auto justify-content-center">-->
-<!--            <img src="./figs/results_kitti.png" class="d-block col-6" alt="results on KITTI" />-->
-<!--            <div class="col-6">-->
-<!--                <img src="./figs/distractors.png" class="d-block w-100" alt="robustness to distractors" />-->
-<!--                <img src="./figs/with_appearance_matching.png" class="d-block w-100 my-auto" alt="robustness to distractors" />-->
-<!--            </div>-->
-
-
-<!--        </div>-->
-
-<!--    </div>-->
-<!--    <div class="container-sm p-4 w-75">-->
-<!--        <h3 class="subtitle">Qualitative Results</h3>-->
-<!--        <h6 class="text-black p-1">Tracking on Cars</h6>-->
-
-<!--        <img src="./figs/vis2.png" class="img-fluid d-block mx-auto" alt="results on nuscenes and waymo" />-->
-<!--        <h6 class="text-black p-1">Tracking on Pedestrian</h6>-->
-<!--        <img src="./figs/vis3.png" class="img-fluid d-block mx-auto" alt="results on nuscenes and waymo" />-->
-<!--    </div>-->
     <div class="container-sm bg-light p-4 w-75">
         <h3 class="subtitle">Citation</h3>
         <pre><code>
